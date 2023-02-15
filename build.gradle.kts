@@ -16,7 +16,7 @@ dependencies {
 //    implementation(libs.arrow.vector)
 //    implementation(libs.arrow.memory.unsafe)
 
-    implementation(libs.dataframe)
+    implementation(libs.dataframe.arrow)
 
     // for chapi
     implementation(libs.chapi.domain) {

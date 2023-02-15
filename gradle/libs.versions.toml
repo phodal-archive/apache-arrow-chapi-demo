@@ -35,6 +35,7 @@ arrow-memory-netty = { group = "org.apache.arrow", name = "arrow-memory-netty", 
 arrow-memory-unsafe = { group = "org.apache.arrow", name = "arrow-memory-unsafe", version.ref = "arrow" }
 
 dataframe = { group = "org.jetbrains.kotlinx", name = "dataframe", version.ref = "dataframe" }
+dataframe-arrow = { group = "org.jetbrains.kotlinx", name = "dataframe-arrow", version.ref = "dataframe" }
 
 [plugins]
 shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadowJar" }
