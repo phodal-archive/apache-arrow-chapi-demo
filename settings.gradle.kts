@@ -1,3 +1,4 @@
+@file:Suppress("UnstableApiUsage")
 
-rootProject.name = "untitled2"
+rootProject.name = "Chapi with Arrow"
 

@@ -1,3 +1,4 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     kotlin("jvm") version "1.8.0"
     application
@@ -11,6 +12,17 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.arrow.vector)
+    implementation(libs.arrow.memory.netty)
+
+    // for chapi
+    implementation(libs.chapi.domain) {
+        exclude(group = "org.jetbrains.kotlin", module = "kotlin-test-junit")
+    }
+    implementation(libs.chapi.java) {
+        exclude(group = "org.jetbrains.kotlin", module = "kotlin-test-junit")
+    }
+
     testImplementation(kotlin("test"))
 }
 
@@ -23,5 +35,5 @@ kotlin {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("com.phodal.chapi.arrow.MainKt")
 }
