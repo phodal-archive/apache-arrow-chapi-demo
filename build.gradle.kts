@@ -13,8 +13,10 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.arrow.vector)
-    implementation(libs.arrow.memory.unsafe)
+//    implementation(libs.arrow.vector)
+//    implementation(libs.arrow.memory.unsafe)
+
+    implementation(libs.dataframe)
 
     // for chapi
     implementation(libs.chapi.domain) {
