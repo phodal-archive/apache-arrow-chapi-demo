@@ -2,7 +2,7 @@
 
 - Apache Arrow with Chapi: 14M
 - Jetbrains Dataframe with Chapi: 35M
-- Jetbrains Dataframe Arrow with Chapi: 35M
+- Jetbrains Dataframe Arrow with Chapi: 19M
 
 Jetbrains Dataframe Arrow depends on Apache Arrow, so it is not surprising that the size is the same as Jetbrains Dataframe.
 
