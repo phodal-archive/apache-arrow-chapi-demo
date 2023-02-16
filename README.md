@@ -16,3 +16,7 @@ implementation(libs.commonsCompress)
 implementation(libs.kotlin.reflect)
 implementation(libs.kotlin.datetimeJvm)
 ```
+
+## Notes for dataframe
+
+1. the class should be `data class`,
