@@ -23,10 +23,10 @@ fun main(args: Array<String>) {
         CodeDataStruct(
             NodeName = "MainCli",
             Package = "com.phodal.chapi",
-            Fields = arrayOf(CodeField("name", "string", "test")),
-            MultipleExtend = arrayOf("Sample"),
+            Fields = listOf(CodeField("name", "string", "test")),
+            MultipleExtend = listOf("Sample"),
             Extend = "Client",
-            Exports = arrayOf(CodeExport("test", "test"))
+            Exports = listOf(CodeExport("test", "test"))
         )
     )
 
@@ -34,7 +34,6 @@ fun main(args: Array<String>) {
     codeDataStructs.toDataFrame(maxDepth = 2).writeArrowFeather(File(FILE_NAME))
     val dataFrame = DataFrame
         .readArrowFeather(File(FILE_NAME))
-//        .cast<CodeDataStruct>()
 
     dataFrame
         .print(10)

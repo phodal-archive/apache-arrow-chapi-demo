@@ -2,7 +2,7 @@ package com.phodal.chapi.arrow.core
 
 public class DomainConstants {
     companion object {
-        val ASSERTION_LIST = arrayOf(
+        val ASSERTION_LIST = listOf(
             "assert",
             "should",
             "check",    // ArchUnit,
