@@ -13,18 +13,17 @@ private const val FILE_NAME = "0_codes.arrow"
 
 fun main(args: Array<String>) {
     val dataFrame =
-        DataFrame.read("https://raw.githubusercontent.com/phodal-archive/apache-arrow-chapi-demo/master/data/0_codes.json")
+        DataFrame.read("data/0_codes.json")
 //    dataFrame.schema().print()
 //
-//    val fields: List<Field> = dataFrame.columns().map {
-//        val col = HelpUtil().toArrowField(it, ignoreMismatchMessage)
-//        println(col)
-//        col
-//    }
-//
-//    val toArrowSchema = org.apache.arrow.vector.types.pojo.Schema(fields)
-//    File(FILE_NAME).writeText(toArrowSchema.toJson())
+    val fields: List<Field> = dataFrame.columns().map {
+        val col = HelpUtil().toArrowField(it, ignoreMismatchMessage)
+        col
+    }
 
-    dataFrame.writeArrowFeather(File("codes.arrow"))
+    val toArrowSchema = org.apache.arrow.vector.types.pojo.Schema(fields)
+    File(FILE_NAME).writeText(toArrowSchema.toJson())
+
+//    dataFrame.writeArrowFeather(File("codes.arrow"))
 }
 

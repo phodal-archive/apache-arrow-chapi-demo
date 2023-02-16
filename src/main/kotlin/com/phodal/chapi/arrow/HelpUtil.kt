@@ -7,10 +7,14 @@ import org.apache.arrow.vector.types.pojo.ArrowType
 import org.apache.arrow.vector.types.pojo.Field
 import org.apache.arrow.vector.types.pojo.FieldType
 import org.jetbrains.kotlinx.dataframe.AnyCol
+import org.jetbrains.kotlinx.dataframe.AnyFrame
 import org.jetbrains.kotlinx.dataframe.DataFrame
+import org.jetbrains.kotlinx.dataframe.DataRow
+import org.jetbrains.kotlinx.dataframe.columns.BaseColumn
 import org.jetbrains.kotlinx.dataframe.columns.FrameColumn
 import org.jetbrains.kotlinx.dataframe.io.ConvertingMismatch
 import org.jetbrains.kotlinx.dataframe.io.ignoreMismatchMessage
+import org.jetbrains.kotlinx.dataframe.io.toArrowField
 import org.jetbrains.kotlinx.dataframe.schema.ColumnSchema
 import org.jetbrains.kotlinx.dataframe.typeClass
 import java.time.LocalDate
@@ -20,7 +24,10 @@ import kotlin.reflect.full.isSubtypeOf
 import kotlin.reflect.typeOf
 
 class HelpUtil {
-    fun toArrowField(col: AnyCol, mismatchSubscriber: (ConvertingMismatch) -> Unit = ignoreMismatchMessage): Field {
+    fun toArrowField(
+        col: BaseColumn<*>,
+        mismatchSubscriber: (ConvertingMismatch) -> Unit = ignoreMismatchMessage
+    ): Field {
         val column = col
         val columnType = column.type()
         val nullable = columnType.isMarkedNullable
@@ -91,21 +98,21 @@ class HelpUtil {
                 emptyList()
             )
 
-            columnType.isSubtypeOf(typeOf<DataFrame<*>?>()) -> {
-                val frameSchema = (col as FrameColumn<*>).schema.value
-                val fields = frameSchema.columns.entries.map {
+            columnType.isSubtypeOf(typeOf<DataFrame<*>>()) -> {
+                val fields: List<Field> = (column as FrameColumn<*>).values().flatMap {
+                    it.columns().map { col -> toArrowField(col, mismatchSubscriber) }
                 }
-                println("Unsupported type: ${columnType}")
-                Field(
-                    column.name(),
-                    FieldType(nullable, ArrowType.Utf8(), null),
-                    emptyList()
-                )
+
+                Field(column.name(), FieldType(true, ArrowType.List(), null), fields)
+            }
+
+            columnType.isSubtypeOf(typeOf<DataRow<*>>()) -> {
+                Field(column.name(), FieldType(true, ArrowType.List(), null), emptyList())
             }
 
             else -> {
                 println("Unsupported type: ${columnType}")
-                mismatchSubscriber(ConvertingMismatch.SavedAsString(column.name(), column.typeClass.java))
+                mismatchSubscriber(ConvertingMismatch.SavedAsString(column.name(), column.javaClass))
                 Field(column.name(), FieldType(true, ArrowType.Utf8(), null), emptyList())
             }
         }
