@@ -37,6 +37,7 @@ arrow-memory-unsafe = { group = "org.apache.arrow", name = "arrow-memory-unsafe"
 dataframe = { group = "org.jetbrains.kotlinx", name = "dataframe", version.ref = "dataframe" }
 dataframe-arrow = { group = "org.jetbrains.kotlinx", name = "dataframe-arrow", version.ref = "dataframe" }
 
+
 [plugins]
 shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadowJar" }
 serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
