@@ -11,6 +11,7 @@ import org.jetbrains.kotlinx.dataframe.AnyFrame
 import org.jetbrains.kotlinx.dataframe.DataFrame
 import org.jetbrains.kotlinx.dataframe.DataRow
 import org.jetbrains.kotlinx.dataframe.columns.BaseColumn
+import org.jetbrains.kotlinx.dataframe.columns.ColumnGroup
 import org.jetbrains.kotlinx.dataframe.columns.FrameColumn
 import org.jetbrains.kotlinx.dataframe.io.ConvertingMismatch
 import org.jetbrains.kotlinx.dataframe.io.ignoreMismatchMessage
@@ -98,7 +99,12 @@ class HelpUtil {
                 emptyList()
             )
 
+            columnType.isSubtypeOf(typeOf<List<String>>()) -> {
+                Field(column.name(), FieldType(true, ArrowType.List(), null), emptyList())
+            }
+
             columnType.isSubtypeOf(typeOf<DataFrame<*>>()) -> {
+                // array
                 val fields: List<Field> = (column as FrameColumn<*>).values().flatMap {
                     it.columns().map { col -> toArrowField(col, mismatchSubscriber) }
                 }
@@ -107,7 +113,9 @@ class HelpUtil {
             }
 
             columnType.isSubtypeOf(typeOf<DataRow<*>>()) -> {
-                Field(column.name(), FieldType(true, ArrowType.List(), null), emptyList())
+                // object
+                val fields = (column as ColumnGroup<*>).columns().map { col -> toArrowField(col, mismatchSubscriber) }
+                Field(column.name(), FieldType(true, ArrowType.Map(false), null), fields)
             }
 
             else -> {
