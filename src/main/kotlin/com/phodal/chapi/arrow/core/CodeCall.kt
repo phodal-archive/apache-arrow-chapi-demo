@@ -30,7 +30,7 @@ data class CodeCall(
     // for Function, it's empty
     var NodeName: String = "",
     var FunctionName: String = "",
-    var Parameters: List<CodeProperty> = listOf(),
+    var Parameters: ArrayList<CodeProperty> = arrayListOf(),
     var Position: CodePosition = CodePosition(),
     // like "v1.Group", the v1 will be the Receiver
     // since 2.0.0-Beta.9
@@ -64,7 +64,7 @@ data class CodeCall(
 
     fun hasAssertion(): Boolean {
         val methodName = this.FunctionName.lowercase()
-        DomainConstants.ASSERTION_LIST.forEach { assertion ->
+        DomainConstants.ASSERTION_ArrayList.forEach { assertion ->
             if (methodName.startsWith(assertion)) {
                 return true
             }

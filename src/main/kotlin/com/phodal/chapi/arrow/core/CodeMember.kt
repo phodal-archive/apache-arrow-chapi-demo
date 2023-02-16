@@ -10,9 +10,9 @@ data class CodeMember(
     var AliasPackage: String = "",
     var Name: String = "",
     var Type: String = "",
-    var StructureNodes: List<CodeDataStruct> = listOf(),
-    var FunctionNodes: List<CodeFunction> = listOf(),
-    var Namespace: List<String> = listOf(),
+    var StructureNodes: ArrayList<CodeDataStruct> = arrayListOf(),
+    var FunctionNodes: ArrayList<CodeFunction> = arrayListOf(),
+    var Namespace: ArrayList<String> = arrayListOf(),
     var Position: CodePosition = CodePosition()
 ) {
     fun buildMemberId() {

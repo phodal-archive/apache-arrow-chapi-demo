@@ -19,19 +19,19 @@ data class CodeFunction(
     var FilePath: String = "",
     var Package: String = "",
     var ReturnType: String = "",
-    var MultipleReturns: List<CodeProperty> = listOf(),
-    var Parameters: List<CodeProperty> = listOf(),
-    var FunctionCalls: List<CodeCall> = listOf(),
-    var Annotations: List<CodeAnnotation> = listOf(),
+    var MultipleReturns: ArrayList<CodeProperty> = arrayListOf(),
+    var Parameters: ArrayList<CodeProperty> = arrayListOf(),
+    var FunctionCalls: ArrayList<CodeCall> = arrayListOf(),
+    var Annotations: ArrayList<CodeAnnotation> = arrayListOf(),
     var Override: Boolean = false,
-    var Modifiers: List<String> = listOf(),
+    var Modifiers: ArrayList<String> = arrayListOf(),
     // for example, Java can have Inner Class
-    var InnerStructures: List<CodeDataStruct> = listOf(),
+    var InnerStructures: ArrayList<CodeDataStruct> = arrayListOf(),
     // for lambda or anonymous function inside function.
-    var InnerFunctions: List<CodeFunction> = listOf(),
+    var InnerFunctions: ArrayList<CodeFunction> = arrayListOf(),
     var Position: CodePosition = CodePosition(),
     var Extension: JsonElement = JsonObject(HashMap()),
-    var LocalVariables: List<CodeProperty> = listOf(),
+    var LocalVariables: ArrayList<CodeProperty> = arrayListOf(),
     var IsConstructor: Boolean = false, // todo: move to extension
     var IsReturnHtml: Boolean = false,
     var BodyHash: Int = 0,
@@ -99,7 +99,7 @@ data class CodeFunction(
     fun addVarsFromMap(localVars: MutableMap<String, String>) {
         this.LocalVariables = localVars.map { entry ->
             CodeProperty(TypeValue = entry.key, TypeType = entry.value)
-        }
+        }.toCollection(ArrayList())
     }
 
     fun fileExt(): String {

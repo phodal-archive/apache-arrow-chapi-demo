@@ -9,6 +9,6 @@ data class CodeImport(
     var AsName: String = "",
     // import UsageName from 'usage'
     // import AsSource as UsageName from 'source'
-    var UsageName: List<String> = listOf(),
+    var UsageName: ArrayList<String> = arrayListOf(),
     var Scope: String = ""
 )

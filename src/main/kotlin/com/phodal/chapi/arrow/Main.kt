@@ -23,10 +23,10 @@ fun main(args: Array<String>) {
         CodeDataStruct(
             NodeName = "MainCli",
             Package = "com.phodal.chapi",
-            Fields = listOf(CodeField("name", "string", "test")),
-            MultipleExtend = listOf("Sample"),
+            Fields = arrayListOf(CodeField("name", "string", "test")),
+            MultipleExtend = arrayListOf("Sample"),
             Extend = "Client",
-            Exports = listOf(CodeExport("test", "test"))
+            Exports = arrayListOf(CodeExport("test", "test"))
         )
     )
 

@@ -6,9 +6,9 @@ import kotlinx.serialization.Serializable
 data class CodeContainer(
     var FullName: String = "",
     var PackageName: String = "",
-    var Imports: List<CodeImport> = listOf(),
-    var Members: List<CodeMember> = listOf(),
-    var DataStructures: List<CodeDataStruct> = listOf(),
-    var Fields: List<CodeField> = listOf(),
-    var Containers: List<CodeContainer> = listOf()
+    var Imports: ArrayList<CodeImport> = arrayListOf(),
+    var Members: ArrayList<CodeMember> = arrayListOf(),
+    var DataStructures: ArrayList<CodeDataStruct> = arrayListOf(),
+    var Fields: ArrayList<CodeField> = arrayListOf(),
+    var Containers: ArrayList<CodeContainer> = arrayListOf()
 )

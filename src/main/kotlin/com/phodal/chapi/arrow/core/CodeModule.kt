@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CodeModule (
-    var Packages : List<CodePackage> = listOf(),
+    var Packages : ArrayList<CodePackage> = arrayListOf(),
     var packageInfo : CodePackageInfo = CodePackageInfo()
 )

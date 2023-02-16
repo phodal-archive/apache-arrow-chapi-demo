@@ -31,23 +31,23 @@ data class CodeDataStruct(
     var Package: String = "",
     var FilePath: String = "",
     // todo: thinking in change to property
-    var Fields: List<CodeField> = listOf(),
-    var MultipleExtend: List<String> = listOf(),
-    var Implements: List<String> = listOf(),
+    var Fields: ArrayList<CodeField> = arrayListOf(),
+    var MultipleExtend: ArrayList<String> = arrayListOf(),
+    var Implements: ArrayList<String> = arrayListOf(),
     var Extend: String = "",
-    var Functions: List<CodeFunction> = listOf(),
-    var InnerStructures: List<CodeDataStruct> = listOf(),
-    var Annotations: List<CodeAnnotation> = listOf(),
-    var FunctionCalls: List<CodeCall> = listOf(),
+    var Functions: ArrayList<CodeFunction> = arrayListOf(),
+    var InnerStructures: ArrayList<CodeDataStruct> = arrayListOf(),
+    var Annotations: ArrayList<CodeAnnotation> = arrayListOf(),
+    var FunctionCalls: ArrayList<CodeCall> = arrayListOf(),
 
     @Deprecated(message = "looking for constructor method for SCALA")
-    var Parameters: List<CodeProperty> = listOf(), // for Scala
+    var Parameters: ArrayList<CodeProperty> = arrayListOf(), // for Scala
 
-    var Imports: List<CodeImport> = listOf(),
+    var Imports: ArrayList<CodeImport> = arrayListOf(),
 
     // in TypeScript, a files can export Function, Variable, Class, Interface
     // `export const baseURL = '/api'`
-    var Exports: List<CodeExport> = listOf(),
+    var Exports: ArrayList<CodeExport> = arrayListOf(),
 
     // todo: select node useonly imports
     var Extension: JsonElement = JsonObject(HashMap()),
@@ -60,13 +60,13 @@ data class CodeDataStruct(
     }
 
     fun setMethodsFromMap(methodMap: MutableMap<String, CodeFunction>) {
-        this.Functions = methodMap.values.toList()
+        this.Functions = methodMap.values.toCollection(ArrayList())
     }
 
-    fun filterAnnotations(vararg keys: String): List<CodeAnnotation> {
+    fun filterAnnotations(vararg keys: String): ArrayList<CodeAnnotation> {
         return this.Annotations.filter { prop ->
             keys.map { it.lowercase() }.contains(prop.Name.lowercase())
-        }
+        } as ArrayList<CodeAnnotation>
     }
 
     fun getClassFullName(): String {

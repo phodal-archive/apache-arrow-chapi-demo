@@ -8,8 +8,8 @@ data class CodeField(
     var TypeType: String = "",
     var TypeValue: String = "",
     var TypeKey: String = "",
-    var Annotations: List<CodeAnnotation> = listOf(),
-    var Modifiers: List<String> = listOf(),
+    var Annotations: ArrayList<CodeAnnotation> = arrayListOf(),
+    var Modifiers: ArrayList<String> = arrayListOf(),
     // for TypeScript and JavaScript only, examples: `export default sample = createHello() `
-    var Calls: List<CodeCall> = listOf()
+    var Calls: ArrayList<CodeCall> = arrayListOf()
 )
