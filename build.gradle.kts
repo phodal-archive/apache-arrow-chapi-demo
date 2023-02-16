@@ -3,6 +3,8 @@ plugins {
     kotlin("jvm") version "1.8.0"
     application
     alias(libs.plugins.shadow)
+    alias(libs.plugins.serialization)
+    id("org.jetbrains.kotlin.plugin.dataframe") version "0.10.0-dev-1373"
 }
 
 group = "com.phodal.chapi"
@@ -13,8 +15,7 @@ repositories {
 }
 
 dependencies {
-//    implementation(libs.arrow.vector)
-//    implementation(libs.arrow.memory.unsafe)
+    implementation(libs.serialization.json)
 
     implementation(libs.dataframe.arrow)
 

@@ -1,20 +1,39 @@
+@file:ImportDataSchema(
+    "CodeDataStruct",
+    "src/main/resources/0_codes.json",
+)
+
 package com.phodal.chapi.arrow
 
-import chapi.domain.core.CodeDataStruct
+import chapi.domain.core.CodePosition
 import org.jetbrains.kotlinx.dataframe.DataFrame
+import org.jetbrains.kotlinx.dataframe.annotations.ImportDataSchema
+import org.jetbrains.kotlinx.dataframe.api.cast
 import org.jetbrains.kotlinx.dataframe.api.print
 import org.jetbrains.kotlinx.dataframe.api.schema
+import org.jetbrains.kotlinx.dataframe.api.toDataFrame
 import org.jetbrains.kotlinx.dataframe.io.readArrowFeather
+import org.jetbrains.kotlinx.dataframe.io.writeArrowFeather
+import java.io.File
 
 private const val FILE_NAME = "0_codes.arrow"
 
 fun main(args: Array<String>) {
+    listOf(chapi.domain.core.CodeDataStruct(
+        NodeName = "test",
+        Position = CodePosition(1, 2, 3, 4),
+    )).toDataFrame()
+        .writeArrowFeather(File(FILE_NAME))
+
+
     val dataFrame = DataFrame
         .readArrowFeather(FILE_NAME)
+        .cast<CodeDataStruct>()
+
     dataFrame
         .print(10)
 
-    println(dataFrame.schema())
+    println(dataFrame[0])
 }
 
 data class SampleData(val name: String, val age: Int)

@@ -39,3 +39,4 @@ dataframe-arrow = { group = "org.jetbrains.kotlinx", name = "dataframe-arrow", v
 
 [plugins]
 shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadowJar" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
