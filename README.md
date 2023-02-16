@@ -20,3 +20,4 @@ implementation(libs.kotlin.datetimeJvm)
 ## Notes for dataframe
 
 1. the class should be `data class`,
+2. the collections should be `List` or `Map` or `ArrayList`, can not be `Array`
