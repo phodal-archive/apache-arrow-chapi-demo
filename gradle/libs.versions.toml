@@ -10,7 +10,7 @@ arrow = "11.0.0"
 
 shadowJar = "7.1.2"
 
-dataframe = "0.9.1"
+dataframe = "0.10.0-dev-1373"
 
 [libraries]
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
