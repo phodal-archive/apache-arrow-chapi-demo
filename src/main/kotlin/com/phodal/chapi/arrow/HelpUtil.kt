@@ -104,7 +104,6 @@ class HelpUtil {
             }
 
             columnType.isSubtypeOf(typeOf<DataFrame<*>>()) -> {
-                // array
                 val fields: List<Field> = (column as FrameColumn<*>).values().flatMap {
                     it.columns().map { col -> toArrowField(col, mismatchSubscriber) }
                 }
@@ -113,7 +112,6 @@ class HelpUtil {
             }
 
             columnType.isSubtypeOf(typeOf<DataRow<*>>()) -> {
-                // object
                 val fields = (column as ColumnGroup<*>).columns().map { col -> toArrowField(col, mismatchSubscriber) }
                 Field(column.name(), FieldType(true, ArrowType.Map(false), null), fields)
             }
