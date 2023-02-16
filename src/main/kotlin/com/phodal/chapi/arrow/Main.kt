@@ -37,15 +37,6 @@ fun main(args: Array<String>) {
 
     dataFrame
         .print(10)
-
-    val functions = listOf(CodeFunction("test"))
-
-    functions.toDataFrame(maxDepth = 1).writeArrowFeather(File("0_functions.arrow"))
-    val dataFrame2 = DataFrame
-        .readArrowFeather(File("0_functions.arrow"))
-
-    dataFrame2
-        .print(10)
 }
 
 private fun sampleWithArray() {
