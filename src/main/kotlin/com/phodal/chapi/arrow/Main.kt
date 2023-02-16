@@ -17,11 +17,22 @@ import java.io.File
 
 private const val FILE_NAME = "0_codes.arrow"
 
+data class DataStruct(
+    val name: String,
+    val position: Position,
+)
+
+data class Position(
+    val start: Int,
+    val end: Int,
+)
+
+
 fun main(args: Array<String>) {
     listOf(
-        chapi.domain.core.CodeDataStruct(
-            NodeName = "test",
-            Position = CodePosition(1, 2, 3, 4),
+        DataStruct(
+            "name",
+            Position(1, 2)
         )
     ).toDataFrame()
         .writeArrowFeather(File(FILE_NAME))
@@ -29,7 +40,7 @@ fun main(args: Array<String>) {
 
     val dataFrame = DataFrame
         .readArrowFeather(FILE_NAME)
-        .cast<chapi.domain.core.CodeDataStruct>()
+        .cast<DataStruct>()
 
     dataFrame
         .print(10)
