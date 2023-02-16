@@ -19,10 +19,6 @@ dependencies {
 
     implementation(libs.dataframe.arrow)
 
-    // for chapi
-    implementation(libs.chapi.domain)
-    implementation(libs.chapi.java)
-
     testImplementation(kotlin("test"))
 }
 
