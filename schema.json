@@ -71,7 +71,7 @@
           },
           "children": [
             {
-              "name": "Modifiers",
+              "name": null,
               "nullable": false,
               "type": {
                 "name": "utf8"
@@ -98,7 +98,7 @@
       },
       "children": [
         {
-          "name": "Implements",
+          "name": null,
           "nullable": false,
           "type": {
             "name": "utf8"
@@ -214,8 +214,7 @@
               "name": "Position",
               "nullable": true,
               "type": {
-                "name": "map",
-                "keysSorted": false
+                "name": "struct"
               },
               "children": [
                 {
@@ -313,8 +312,7 @@
               "name": "Position",
               "nullable": true,
               "type": {
-                "name": "map",
-                "keysSorted": false
+                "name": "struct"
               },
               "children": [
                 {
@@ -534,8 +532,7 @@
           "name": "Position",
           "nullable": true,
           "type": {
-            "name": "map",
-            "keysSorted": false
+            "name": "struct"
           },
           "children": [
             {
@@ -660,8 +657,7 @@
       "name": "Position",
       "nullable": true,
       "type": {
-        "name": "map",
-        "keysSorted": false
+        "name": "struct"
       },
       "children": [
         {

@@ -1,5 +1,6 @@
 package com.phodal.chapi.arrow
 
+import org.apache.arrow.flatbuf.Union
 import org.apache.arrow.vector.types.DateUnit
 import org.apache.arrow.vector.types.FloatingPointPrecision
 import org.apache.arrow.vector.types.TimeUnit
@@ -95,7 +96,7 @@ class HelpUtil {
             )
 
             columnType.isSubtypeOf(typeOf<List<String>>()) -> {
-                val field = Field(column.name(), FieldType(nullable, ArrowType.Utf8(), null), emptyList())
+                val field = Field(null, FieldType(nullable, ArrowType.Utf8(), null), emptyList())
                 Field(column.name(), FieldType(true, ArrowType.List(), null), listOf(field))
             }
 
@@ -109,7 +110,7 @@ class HelpUtil {
 
             columnType.isSubtypeOf(typeOf<DataRow<*>>()) -> {
                 val fields = (column as ColumnGroup<*>).columns().map { col -> toArrowField(col, mismatchSubscriber) }
-                Field(column.name(), FieldType(true, ArrowType.Map(false), null), fields)
+                Field(column.name(), FieldType(true, ArrowType.Struct(), null), fields)
             }
 
             else -> {
