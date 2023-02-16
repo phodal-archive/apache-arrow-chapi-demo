@@ -1,148 +1,129 @@
 {
-  "fields": [
-    {
-      "name": "NodeName",
-      "nullable": false,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+  "fields" : [ {
+    "name" : "NodeName",
+    "nullable" : false,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Module",
-      "nullable": false,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Module",
+    "nullable" : false,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Type",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Type",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Package",
-      "nullable": false,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Package",
+    "nullable" : false,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "FilePath",
-      "nullable": false,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "FilePath",
+    "nullable" : false,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Fields",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Fields",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "MultipleExtend",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "MultipleExtend",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Implements",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Implements",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Extend",
-      "nullable": false,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Extend",
+    "nullable" : false,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Functions",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Functions",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "InnerStructures",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "InnerStructures",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Annotations",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Annotations",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "FunctionCalls",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "FunctionCalls",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Parameters",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Parameters",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Imports",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Imports",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Exports",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Exports",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Extension",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
+    "children" : [ ]
+  }, {
+    "name" : "Extension",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
     },
-    {
-      "name": "Position",
-      "nullable": true,
-      "type": {
-        "name": "utf8"
-      },
-      "children": []
-    }
-  ]
+    "children" : [ ]
+  }, {
+    "name" : "Position",
+    "nullable" : true,
+    "type" : {
+      "name" : "utf8"
+    },
+    "children" : [ ]
+  } ]
 }
