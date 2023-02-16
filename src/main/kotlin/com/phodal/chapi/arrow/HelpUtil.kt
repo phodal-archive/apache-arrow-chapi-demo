@@ -6,8 +6,6 @@ import org.apache.arrow.vector.types.TimeUnit
 import org.apache.arrow.vector.types.pojo.ArrowType
 import org.apache.arrow.vector.types.pojo.Field
 import org.apache.arrow.vector.types.pojo.FieldType
-import org.jetbrains.kotlinx.dataframe.AnyCol
-import org.jetbrains.kotlinx.dataframe.AnyFrame
 import org.jetbrains.kotlinx.dataframe.DataFrame
 import org.jetbrains.kotlinx.dataframe.DataRow
 import org.jetbrains.kotlinx.dataframe.columns.BaseColumn
@@ -15,9 +13,6 @@ import org.jetbrains.kotlinx.dataframe.columns.ColumnGroup
 import org.jetbrains.kotlinx.dataframe.columns.FrameColumn
 import org.jetbrains.kotlinx.dataframe.io.ConvertingMismatch
 import org.jetbrains.kotlinx.dataframe.io.ignoreMismatchMessage
-import org.jetbrains.kotlinx.dataframe.io.toArrowField
-import org.jetbrains.kotlinx.dataframe.schema.ColumnSchema
-import org.jetbrains.kotlinx.dataframe.typeClass
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
@@ -100,7 +95,8 @@ class HelpUtil {
             )
 
             columnType.isSubtypeOf(typeOf<List<String>>()) -> {
-                Field(column.name(), FieldType(true, ArrowType.List(), null), emptyList())
+                val field = Field(column.name(), FieldType(nullable, ArrowType.Utf8(), null), emptyList())
+                Field(column.name(), FieldType(true, ArrowType.List(), null), listOf(field))
             }
 
             columnType.isSubtypeOf(typeOf<DataFrame<*>>()) -> {

@@ -69,7 +69,16 @@
           "type": {
             "name": "list"
           },
-          "children": []
+          "children": [
+            {
+              "name": "Modifiers",
+              "nullable": false,
+              "type": {
+                "name": "utf8"
+              },
+              "children": []
+            }
+          ]
         },
         {
           "name": "TypeValue",
@@ -87,7 +96,16 @@
       "type": {
         "name": "list"
       },
-      "children": []
+      "children": [
+        {
+          "name": "Implements",
+          "nullable": false,
+          "type": {
+            "name": "utf8"
+          },
+          "children": []
+        }
+      ]
     },
     {
       "name": "Functions",

@@ -1,0 +1,533 @@
+[
+  {
+    "NodeName": "ApiCallAnalyser",
+    "Module": "root:feat_apicalls",
+    "Type": "CLASS",
+    "Package": "org.archguard.scanner.analyser",
+    "FilePath": "feat_apicalls/src/main/kotlin/org/archguard/scanner/analyser/ApiCallAnalyser.kt",
+    "Fields": [
+      {
+        "TypeType": "org.archguard.scanner.core.sourcecode.SourceCodeContext",
+        "TypeKey": "context",
+        "Modifiers": [
+          "override",
+          "val"
+        ]
+      },
+      {
+        "TypeType": "<UNKNOWN>",
+        "TypeValue": "context.client",
+        "TypeKey": "client",
+        "Modifiers": [
+          "private",
+          "val"
+        ]
+      },
+      {
+        "TypeType": "<UNKNOWN>",
+        "TypeValue": "LoggerFactory.getLogger(this.javaClass)",
+        "TypeKey": "logger",
+        "Modifiers": [
+          "private",
+          "val"
+        ]
+      }
+    ],
+    "Implements": [
+      "org.archguard.scanner.core.sourcecode.ASTSourceCodeAnalyser"
+    ],
+    "Functions": [
+      {
+        "Name": "PrimaryConstructor",
+        "Package": "org.archguard.scanner.analyser",
+        "ReturnType": "org.archguard.scanner.analyser.ApiCallAnalyser",
+        "Parameters": [
+          {
+            "TypeValue": "context",
+            "TypeType": "org.archguard.scanner.core.sourcecode.SourceCodeContext"
+          }
+        ],
+        "FunctionCalls": [
+          {
+            "Package": "org.archguard.scanner.core.sourcecode",
+            "NodeName": "SourceCodeContext",
+            "FunctionName": "client",
+            "Position": {
+              "StartLine": 14,
+              "StartLinePosition": 25,
+              "StopLine": 14,
+              "StopLinePosition": 33
+            }
+          },
+          {
+            "Package": "org.slf4j",
+            "NodeName": "LoggerFactory",
+            "FunctionName": "getLogger",
+            "Parameters": [
+              {
+                "TypeValue": "this.javaClass",
+                "TypeType": ""
+              }
+            ],
+            "Position": {
+              "StartLine": 15,
+              "StartLinePosition": 25,
+              "StopLine": 15,
+              "StopLinePosition": 63
+            }
+          },
+          {
+            "NodeName": "this",
+            "FunctionName": "javaClass",
+            "Position": {
+              "StartLine": 15,
+              "StartLinePosition": 49,
+              "StopLine": 15,
+              "StopLinePosition": 54
+            }
+          }
+        ],
+        "Position": {
+          "StartLine": 13,
+          "StartLinePosition": 21,
+          "StopLine": 13,
+          "StopLinePosition": 61
+        },
+        "LocalVariables": [
+          {
+            "TypeValue": "client",
+            "TypeType": ""
+          },
+          {
+            "TypeValue": "logger",
+            "TypeType": ""
+          }
+        ],
+        "IsConstructor": true
+      },
+      {
+        "Name": "analyse",
+        "Package": "org.archguard.scanner.analyser",
+        "ReturnType": "kotlin.List<ContainerService>",
+        "Parameters": [
+          {
+            "TypeValue": "input",
+            "TypeType": "kotlin.List<CodeDataStruct>"
+          }
+        ],
+        "FunctionCalls": [
+          {
+            "Package": "org.archguard.scanner.core.sourcecode",
+            "NodeName": "SourceCodeContext",
+            "FunctionName": "language",
+            "Position": {
+              "StartLine": 18,
+              "StartLinePosition": 23,
+              "StopLine": 18,
+              "StopLinePosition": 50
+            }
+          },
+          {
+            "Package": "org.archguard.scanner.core.sourcecode",
+            "NodeName": "SourceCodeContext",
+            "FunctionName": "lowercase",
+            "Position": {
+              "StartLine": 18,
+              "StartLinePosition": 23,
+              "StopLine": 18,
+              "StopLinePosition": 50
+            }
+          },
+          {
+            "Package": "org.archguard.scanner.core.sourcecode",
+            "NodeName": "SourceCodeContext",
+            "FunctionName": "path",
+            "Position": {
+              "StartLine": 19,
+              "StartLinePosition": 19,
+              "StopLine": 19,
+              "StopLinePosition": 27
+            }
+          },
+          {
+            "NodeName": "<UNKNOWN>",
+            "FunctionName": "info",
+            "Parameters": [
+              {
+                "TypeValue": "start analysis frontend api ---- $language",
+                "TypeType": "kotlin.String"
+              }
+            ],
+            "Position": {
+              "StartLine": 23,
+              "StartLinePosition": 16,
+              "StopLine": 23,
+              "StopLinePosition": 72
+            }
+          },
+          {
+            "Package": "org.archguard.scanner.analyser.frontend.FrontendApiAnalyser",
+            "NodeName": "FrontendApiAnalyser",
+            "FunctionName": "FrontendApiAnalyser",
+            "Position": {
+              "StartLine": 25,
+              "StartLinePosition": 36,
+              "StopLine": 25,
+              "StopLinePosition": 56
+            }
+          },
+          {
+            "NodeName": "input",
+            "FunctionName": "forEach",
+            "Position": {
+              "StartLine": 26,
+              "StartLinePosition": 16,
+              "StopLine": 28,
+              "StopLinePosition": 16
+            }
+          },
+          {
+            "NodeName": "feApiAnalyser",
+            "FunctionName": "analysisByNode",
+            "Parameters": [
+              {
+                "TypeValue": "data",
+                "TypeType": ""
+              },
+              {
+                "TypeValue": "context.path",
+                "TypeType": ""
+              }
+            ],
+            "Position": {
+              "StartLine": 27,
+              "StartLinePosition": 20,
+              "StopLine": 27,
+              "StopLinePosition": 59
+            }
+          },
+          {
+            "NodeName": "feApiAnalyser",
+            "FunctionName": "toContainerServices",
+            "Position": {
+              "StartLine": 30,
+              "StartLinePosition": 16,
+              "StopLine": 30,
+              "StopLinePosition": 50
+            }
+          },
+          {
+            "NodeName": "<UNKNOWN>",
+            "FunctionName": "info",
+            "Parameters": [
+              {
+                "TypeValue": "start analysis backend api ---- CSharp",
+                "TypeType": "kotlin.String"
+              }
+            ],
+            "Position": {
+              "StartLine": 34,
+              "StartLinePosition": 16,
+              "StopLine": 34,
+              "StopLinePosition": 68
+            }
+          },
+          {
+            "Package": "org.archguard.scanner.analyser.backend.CSharpApiAnalyser",
+            "NodeName": "CSharpApiAnalyser",
+            "FunctionName": "CSharpApiAnalyser",
+            "Position": {
+              "StartLine": 36,
+              "StartLinePosition": 40,
+              "StopLine": 36,
+              "StopLinePosition": 58
+            }
+          },
+          {
+            "NodeName": "input",
+            "FunctionName": "forEach",
+            "Position": {
+              "StartLine": 37,
+              "StartLinePosition": 16,
+              "StopLine": 39,
+              "StopLinePosition": 16
+            }
+          },
+          {
+            "NodeName": "csharpApiAnalyser",
+            "FunctionName": "analysisByNode",
+            "Parameters": [
+              {
+                "TypeValue": "data",
+                "TypeType": ""
+              },
+              {
+                "TypeValue": "",
+                "TypeType": "kotlin.String"
+              }
+            ],
+            "Position": {
+              "StartLine": 38,
+              "StartLinePosition": 20,
+              "StopLine": 38,
+              "StopLinePosition": 61
+            }
+          },
+          {
+            "NodeName": "csharpApiAnalyser",
+            "FunctionName": "toContainerServices",
+            "Position": {
+              "StartLine": 41,
+              "StartLinePosition": 16,
+              "StopLine": 41,
+              "StopLinePosition": 54
+            }
+          },
+          {
+            "NodeName": "<UNKNOWN>",
+            "FunctionName": "info",
+            "Parameters": [
+              {
+                "TypeValue": "start analysis backend api ---- $language",
+                "TypeType": "kotlin.String"
+              }
+            ],
+            "Position": {
+              "StartLine": 45,
+              "StartLinePosition": 16,
+              "StopLine": 45,
+              "StopLinePosition": 71
+            }
+          },
+          {
+            "Package": "org.archguard.scanner.analyser.backend.JavaApiAnalyser",
+            "NodeName": "JavaApiAnalyser",
+            "FunctionName": "JavaApiAnalyser",
+            "Position": {
+              "StartLine": 47,
+              "StartLinePosition": 34,
+              "StopLine": 47,
+              "StopLinePosition": 50
+            }
+          },
+          {
+            "NodeName": "input",
+            "FunctionName": "forEach",
+            "Position": {
+              "StartLine": 48,
+              "StartLinePosition": 16,
+              "StopLine": 50,
+              "StopLinePosition": 16
+            }
+          },
+          {
+            "NodeName": "apiAnalyser",
+            "FunctionName": "analysisByNode",
+            "Parameters": [
+              {
+                "TypeValue": "data",
+                "TypeType": ""
+              },
+              {
+                "TypeValue": "",
+                "TypeType": "kotlin.String"
+              }
+            ],
+            "Position": {
+              "StartLine": 49,
+              "StartLinePosition": 20,
+              "StopLine": 49,
+              "StopLinePosition": 55
+            }
+          },
+          {
+            "NodeName": "apiAnalyser",
+            "FunctionName": "toContainerServices",
+            "Position": {
+              "StartLine": 52,
+              "StartLinePosition": 16,
+              "StopLine": 52,
+              "StopLinePosition": 48
+            }
+          },
+          {
+            "NodeName": "<UNKNOWN>",
+            "FunctionName": "info",
+            "Parameters": [
+              {
+                "TypeValue": "start analysis backend api ---- $language",
+                "TypeType": "kotlin.String"
+              }
+            ],
+            "Position": {
+              "StartLine": 56,
+              "StartLinePosition": 16,
+              "StopLine": 56,
+              "StopLinePosition": 71
+            }
+          },
+          {
+            "Package": "org.archguard.scanner.analyser.backend.GoApiAnalyser",
+            "NodeName": "GoApiAnalyser",
+            "FunctionName": "GoApiAnalyser",
+            "Position": {
+              "StartLine": 58,
+              "StartLinePosition": 34,
+              "StopLine": 58,
+              "StopLinePosition": 48
+            }
+          },
+          {
+            "NodeName": "input",
+            "FunctionName": "forEach",
+            "Position": {
+              "StartLine": 59,
+              "StartLinePosition": 16,
+              "StopLine": 61,
+              "StopLinePosition": 16
+            }
+          },
+          {
+            "NodeName": "apiAnalyser",
+            "FunctionName": "analysisByNode",
+            "Parameters": [
+              {
+                "TypeValue": "data",
+                "TypeType": ""
+              },
+              {
+                "TypeValue": "",
+                "TypeType": "kotlin.String"
+              }
+            ],
+            "Position": {
+              "StartLine": 60,
+              "StartLinePosition": 20,
+              "StopLine": 60,
+              "StopLinePosition": 55
+            }
+          },
+          {
+            "NodeName": "apiAnalyser",
+            "FunctionName": "toContainerServices",
+            "Position": {
+              "StartLine": 63,
+              "StartLinePosition": 16,
+              "StopLine": 63,
+              "StopLinePosition": 48
+            }
+          },
+          {
+            "FunctionName": "IllegalArgumentException",
+            "Parameters": [
+              {
+                "TypeValue": "Unsupported language: $language",
+                "TypeType": "kotlin.String"
+              }
+            ],
+            "Position": {
+              "StartLine": 66,
+              "StartLinePosition": 26,
+              "StopLine": 66,
+              "StopLinePosition": 84
+            }
+          },
+          {
+            "NodeName": "<UNKNOWN>",
+            "FunctionName": "saveApi",
+            "Parameters": [
+              {
+                "TypeValue": "when(language){\n\"typescript\",\"javascript\"->{\nlogger.info(\"start analysis frontend api ---- context.language.lowercase()\")\n\nvalfeApiAnalyser=FrontendApiAnalyser()\ninput.forEach{data->\nfeApiAnalyser.analysisByNode(data,path)\n}\n\nfeApiAnalyser.toContainerServices()\n}\n\n\"c#\",\"csharp\"->{\nlogger.info(\"start analysis backend api ---- CSharp\")\n\nvalcsharpApiAnalyser=CSharpApiAnalyser()\ninput.forEach{data->\ncsharpApiAnalyser.analysisByNode(data,\"\")\n}\n\ncsharpApiAnalyser.toContainerServices()\n}\n\n\"java\",\"kotlin\"->{\nlogger.info(\"start analysis backend api ---- context.language.lowercase()\")\n\nvalapiAnalyser=JavaApiAnalyser()\ninput.forEach{data->\napiAnalyser.analysisByNode(data,\"\")\n}\n\napiAnalyser.toContainerServices()\n}\n\n\"golang\"->{\nlogger.info(\"start analysis backend api ---- context.language.lowercase()\")\n\nvalapiAnalyser=GoApiAnalyser()\ninput.forEach{data->\napiAnalyser.analysisByNode(data,\"\")\n}\n\napiAnalyser.toContainerServices()\n}\n\nelse->throwIllegalArgumentException(\"Unsupported language: context.language.lowercase()\")\n}",
+                "TypeType": ""
+              }
+            ],
+            "Position": {
+              "StartLine": 69,
+              "StartLinePosition": 8,
+              "StopLine": 69,
+              "StopLinePosition": 31
+            }
+          }
+        ],
+        "Position": {
+          "StartLine": 17,
+          "StartLinePosition": 4,
+          "StopLine": 71,
+          "StopLinePosition": 4
+        },
+        "LocalVariables": [
+          {
+            "TypeValue": "language",
+            "TypeType": ""
+          },
+          {
+            "TypeValue": "path",
+            "TypeType": ""
+          },
+          {
+            "TypeValue": "apiCalls",
+            "TypeType": ""
+          },
+          {
+            "TypeValue": "feApiAnalyser",
+            "TypeType": ""
+          },
+          {
+            "TypeValue": "csharpApiAnalyser",
+            "TypeType": ""
+          },
+          {
+            "TypeValue": "apiAnalyser",
+            "TypeType": ""
+          },
+          {
+            "TypeValue": "apiAnalyser",
+            "TypeType": ""
+          }
+        ]
+      }
+    ],
+    "Imports": [
+      {
+        "Source": "chapi.domain.core.CodeDataStruct",
+        "AsName": "CodeDataStruct"
+      },
+      {
+        "Source": "org.archguard.scanner.analyser.backend.CSharpApiAnalyser",
+        "AsName": "CSharpApiAnalyser"
+      },
+      {
+        "Source": "org.archguard.scanner.analyser.backend.GoApiAnalyser",
+        "AsName": "GoApiAnalyser"
+      },
+      {
+        "Source": "org.archguard.scanner.analyser.backend.JavaApiAnalyser",
+        "AsName": "JavaApiAnalyser"
+      },
+      {
+        "Source": "org.archguard.scanner.analyser.frontend.FrontendApiAnalyser",
+        "AsName": "FrontendApiAnalyser"
+      },
+      {
+        "Source": "org.archguard.scanner.core.sourcecode.ASTSourceCodeAnalyser",
+        "AsName": "ASTSourceCodeAnalyser"
+      },
+      {
+        "Source": "org.archguard.scanner.core.sourcecode.ContainerService",
+        "AsName": "ContainerService"
+      },
+      {
+        "Source": "org.archguard.scanner.core.sourcecode.SourceCodeContext",
+        "AsName": "SourceCodeContext"
+      },
+      {
+        "Source": "org.slf4j.LoggerFactory",
+        "AsName": "LoggerFactory"
+      }
+    ],
+    "Position": {
+      "StartLine": 13,
+      "StopLine": 72
+    }
+  }
+]
