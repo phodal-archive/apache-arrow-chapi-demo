@@ -18,6 +18,7 @@ dependencies {
     implementation(libs.serialization.json)
 
     implementation(libs.dataframe.arrow)
+    implementation(libs.arrow.vector)
     implementation(libs.chapi.domain)
 
     testImplementation(kotlin("test"))

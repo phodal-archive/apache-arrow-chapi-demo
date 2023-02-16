@@ -1,0 +1,148 @@
+{
+  "fields": [
+    {
+      "name": "NodeName",
+      "nullable": false,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Module",
+      "nullable": false,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Type",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Package",
+      "nullable": false,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "FilePath",
+      "nullable": false,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Fields",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "MultipleExtend",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Implements",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Extend",
+      "nullable": false,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Functions",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "InnerStructures",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Annotations",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "FunctionCalls",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Parameters",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Imports",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Exports",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Extension",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    },
+    {
+      "name": "Position",
+      "nullable": true,
+      "type": {
+        "name": "utf8"
+      },
+      "children": []
+    }
+  ]
+}
