@@ -1,18 +1,20 @@
 package com.phodal.chapi.arrow
 
+import chapi.domain.core.CodeDataStruct
 import org.jetbrains.kotlinx.dataframe.DataFrame
 import org.jetbrains.kotlinx.dataframe.api.print
+import org.jetbrains.kotlinx.dataframe.api.schema
 import org.jetbrains.kotlinx.dataframe.io.readArrowFeather
 
-private const val FILE_NAME = "randon_access_to_file.arrow"
+private const val FILE_NAME = "0_codes.arrow"
 
 fun main(args: Array<String>) {
-
-    createArrowFile()
-
-    DataFrame
+    val dataFrame = DataFrame
         .readArrowFeather(FILE_NAME)
+    dataFrame
         .print(10)
+
+    println(dataFrame.schema())
 }
 
 data class SampleData(val name: String, val age: Int)

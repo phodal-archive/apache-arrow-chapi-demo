@@ -1,4 +1,4 @@
 @file:Suppress("UnstableApiUsage")
 
-rootProject.name = "arrow"
+rootProject.name = "arrow-sample"
 
