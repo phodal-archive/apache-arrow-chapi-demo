@@ -20,13 +20,8 @@ dependencies {
     implementation(libs.dataframe.arrow)
 
     // for chapi
-    implementation(libs.chapi.domain) {
-        exclude(group = "org.jetbrains.kotlin", module = "kotlin-test-junit")
-    }
-    implementation(libs.chapi.java) {
-        exclude(group = "com.ibm.icu", module = "icu4j")
-        exclude(group = "org.jetbrains.kotlin", module = "kotlin-test-junit")
-    }
+    implementation(libs.chapi.domain)
+    implementation(libs.chapi.java)
 
     testImplementation(kotlin("test"))
 }

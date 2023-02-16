@@ -26,4 +26,4 @@ replay_pid*
 .gradle
 build
 *.arrow
-!0_codes.arrow
+0_codes.arrow
