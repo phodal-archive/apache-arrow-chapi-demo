@@ -4,10 +4,9 @@
 //)
 package com.phodal.chapi.arrow
 
-import com.phodal.chapi.arrow.core.CodeDataStruct
-import com.phodal.chapi.arrow.core.CodeExport
-import com.phodal.chapi.arrow.core.CodeField
-import com.phodal.chapi.arrow.core.CodeFunction
+import chapi.domain.core.CodeDataStruct
+import chapi.domain.core.CodeExport
+import chapi.domain.core.CodeField
 import org.jetbrains.kotlinx.dataframe.DataFrame
 import org.jetbrains.kotlinx.dataframe.api.cast
 import org.jetbrains.kotlinx.dataframe.api.print

@@ -4,7 +4,7 @@ kotlin = "1.8.0"
 kotlinxCoroutines = "1.6.4"
 kotlinxSerialization = "1.4.1"
 
-chapi = "2.1.1"
+chapi = "2.1.2"
 
 arrow = "11.0.0"
 
