@@ -21,5 +21,13 @@ fun main(args: Array<String>) {
 
     val toArrowSchema = org.apache.arrow.vector.types.pojo.Schema(fields)
     File("schema.json").writeText(toArrowSchema.toJson())
+
+//    val schema = Schema(List<Field>().k().apply {
+//        add(Field.nullable("Source", ArrowType.Utf8()))
+//        add(Field.nullable("AsName", ArrowType.Utf8()))
+//        add(Field.nullable("UsageName", ArrowType.List(ArrowType.Utf8())))
+//        add(Field.nullable("Scope", ArrowType.Utf8()))
+//    }, null)
+
 }
 

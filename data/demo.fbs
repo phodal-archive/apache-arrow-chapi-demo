@@ -1,5 +1,0 @@
-table Modifiers {
-  modifiers: [string];
-}
-
-root_type Modifiers;

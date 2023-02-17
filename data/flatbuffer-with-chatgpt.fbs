@@ -1,0 +1,58 @@
+table CodeData {
+  NodeName: string;
+  Module: string;
+  Type: string;
+  Package: string;
+  FilePath: string;
+  Fields: [Field];
+  Implements: [string];
+  Functions: [Function];
+  Imports: [Import];
+  Position: Position;
+}
+
+table Field {
+  TypeType: string;
+  TypeValue: string;
+  TypeKey: string;
+  Modifiers: [string];
+}
+
+table Function {
+  Name: string;
+  Package: string;
+  ReturnType: string;
+  Parameters: [Parameter];
+  FunctionCalls: [FunctionCall];
+  Position: Position;
+  LocalVariables: [Variable];
+}
+
+table Parameter {
+  TypeValue: string;
+  TypeType: string;
+}
+
+table FunctionCall {
+  NodeName: string;
+  FunctionName: string;
+  Parameters: [Parameter];
+  Position: Position;
+}
+
+table Import {
+  Source: string;
+  AsName: string;
+}
+
+table Position {
+  StartLine: int;
+  StartLinePosition: int;
+  StopLine: int;
+  StopLinePosition: int;
+}
+
+table Variable {
+  TypeValue: string;
+  TypeType: string;
+}
