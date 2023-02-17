@@ -96,6 +96,14 @@ class HelpUtil {
             )
 
             columnType.isSubtypeOf(typeOf<List<String>>()) -> {
+                //           {
+                //            "name": "Modifiers",
+                //            "type": {
+                //              "name": "Modifiers",
+                //              "type": "list",
+                //              "value_type": "string"
+                //            }
+                //          }
                 val field = Field(null, FieldType(nullable, ArrowType.Utf8(), null), emptyList())
                 Field(column.name(), FieldType(true, ArrowType.List(), null), listOf(field))
             }
