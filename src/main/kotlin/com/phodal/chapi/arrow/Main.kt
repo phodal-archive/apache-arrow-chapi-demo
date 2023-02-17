@@ -20,7 +20,7 @@ import java.io.IOException
 
 
 fun main(args: Array<String>) {
-    convertType()
+    parserPythonOutput()
 }
 
 private fun parserPythonOutput() {
