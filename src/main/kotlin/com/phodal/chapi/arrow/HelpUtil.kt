@@ -97,11 +97,42 @@ class HelpUtil {
             )
 
             columnType.isSubtypeOf(typeOf<List<String>>()) -> {
+            // https://arrow.apache.org/blog/2022/10/08/arrow-parquet-encoding-part-2/
+            // {                     # <-- First record
+            //  "a": [1],           # <-- top-level field a containing list of integers
+            //}
+            // Field(name: "a", nullable: true, datatype: List(
+            //  Field(name: "element", nullable: true, datatype: Int32),
+            //)
+
 //                val field = Field(null, FieldType(nullable, ArrowType.Utf8(), null), emptyList())
                 Field(column.name(), FieldType(true, ArrowType.List(), null), emptyList())
             }
 
             columnType.isSubtypeOf(typeOf<DataFrame<*>>()) -> {
+                // https://arrow.apache.org/blog/2022/10/08/arrow-parquet-encoding-part-2/
+                // {              # <-- Third record
+                //  "b": {
+                //    "b1": 5,
+                //    "b2": 6
+                //  },
+                //  "c": {
+                //    "c1": 7
+                //  }
+                //}
+                // should be
+                // Field(name: "a", nullable: true, datatype: Int32)
+                //Field(name: "b", nullable: false, datatype: Struct[
+                //  Field(name: "b1", nullable: true, datatype: Int32),
+                //  Field(name: "b2", nullable: false, datatype: Int32)
+                //])
+                //Field(name: "c"), nullable: true, datatype: Struct[
+                //  Field(name: "c1", nullable: false, datatype: Int32)
+                //])
+                //Field(name: "d"), nullable: true, datatype: Struct[
+                //  Field(name: "d1", nullable: false, datatype: Int32)
+                //  Field(name: "d2", nullable: true, datatype: Int32)
+                //])
                 val fields: List<Field> = (column as FrameColumn<*>).values().flatMap {
                     it.columns().map { col -> toArrowField(col, mismatchSubscriber) }
                 }
