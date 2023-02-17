@@ -27,4 +27,4 @@ replay_pid*
 build
 *.arrow
 0_codes.arrow
-!data/0_codes.json
+!data/*.json
