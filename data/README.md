@@ -115,3 +115,10 @@ val modifiersField = Field(
 其中，"name" 字段的类型是 Utf8，"type" 字段的类型是 List，"value_type" 字段的类型是 Utf8。因为 "type" 字段是一个列表类型，
 所以需要使用 ArrowType.List() 来表示。最后，将三个字段的信息组成一个 Struct 类型，就得到了整个 Modifiers 类型的 ArrowType。
 
+## Tools
+
+sample: https://github.com/domoritz/arrow-tools/tree/main
+
+```
+json2arrow  one_data.json one.schema -p >> by_tools.schema
+```

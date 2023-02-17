@@ -1,4 +1,4 @@
-[[
+[
   {
     "NodeName": "ApiCallAnalyser",
     "Module": "root:feat_apicalls",
@@ -29796,4 +29796,4 @@
       "StopLinePosition": 4
     }
   }
-]]
+]

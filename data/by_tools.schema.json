@@ -1,0 +1,468 @@
+{
+  "fields": [
+    {
+      "name": "Fields",
+      "data_type": {
+        "List": {
+          "name": "item",
+          "data_type": {
+            "Struct": [
+              {
+                "name": "Modifiers",
+                "data_type": {
+                  "List": {
+                    "name": "item",
+                    "data_type": "Utf8",
+                    "nullable": true,
+                    "dict_id": 0,
+                    "dict_is_ordered": false,
+                    "metadata": {}
+                  }
+                },
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              },
+              {
+                "name": "TypeKey",
+                "data_type": "Utf8",
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              },
+              {
+                "name": "TypeType",
+                "data_type": "Utf8",
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              }
+            ]
+          },
+          "nullable": true,
+          "dict_id": 0,
+          "dict_is_ordered": false,
+          "metadata": {}
+        }
+      },
+      "nullable": true,
+      "dict_id": 0,
+      "dict_is_ordered": false,
+      "metadata": {}
+    },
+    {
+      "name": "FilePath",
+      "data_type": "Utf8",
+      "nullable": true,
+      "dict_id": 0,
+      "dict_is_ordered": false,
+      "metadata": {}
+    },
+    {
+      "name": "Functions",
+      "data_type": {
+        "List": {
+          "name": "item",
+          "data_type": {
+            "Struct": [
+              {
+                "name": "FunctionCalls",
+                "data_type": {
+                  "List": {
+                    "name": "item",
+                    "data_type": {
+                      "Struct": [
+                        {
+                          "name": "FunctionName",
+                          "data_type": "Utf8",
+                          "nullable": true,
+                          "dict_id": 0,
+                          "dict_is_ordered": false,
+                          "metadata": {}
+                        },
+                        {
+                          "name": "NodeName",
+                          "data_type": "Utf8",
+                          "nullable": true,
+                          "dict_id": 0,
+                          "dict_is_ordered": false,
+                          "metadata": {}
+                        },
+                        {
+                          "name": "Package",
+                          "data_type": "Utf8",
+                          "nullable": true,
+                          "dict_id": 0,
+                          "dict_is_ordered": false,
+                          "metadata": {}
+                        },
+                        {
+                          "name": "Position",
+                          "data_type": {
+                            "Struct": [
+                              {
+                                "name": "StartLine",
+                                "data_type": "Int64",
+                                "nullable": true,
+                                "dict_id": 0,
+                                "dict_is_ordered": false,
+                                "metadata": {}
+                              },
+                              {
+                                "name": "StartLinePosition",
+                                "data_type": "Int64",
+                                "nullable": true,
+                                "dict_id": 0,
+                                "dict_is_ordered": false,
+                                "metadata": {}
+                              },
+                              {
+                                "name": "StopLine",
+                                "data_type": "Int64",
+                                "nullable": true,
+                                "dict_id": 0,
+                                "dict_is_ordered": false,
+                                "metadata": {}
+                              },
+                              {
+                                "name": "StopLinePosition",
+                                "data_type": "Int64",
+                                "nullable": true,
+                                "dict_id": 0,
+                                "dict_is_ordered": false,
+                                "metadata": {}
+                              }
+                            ]
+                          },
+                          "nullable": true,
+                          "dict_id": 0,
+                          "dict_is_ordered": false,
+                          "metadata": {}
+                        },
+                        {
+                          "name": "Parameters",
+                          "data_type": {
+                            "List": {
+                              "name": "item",
+                              "data_type": {
+                                "Struct": [
+                                  {
+                                    "name": "TypeType",
+                                    "data_type": "Utf8",
+                                    "nullable": true,
+                                    "dict_id": 0,
+                                    "dict_is_ordered": false,
+                                    "metadata": {}
+                                  },
+                                  {
+                                    "name": "TypeValue",
+                                    "data_type": "Utf8",
+                                    "nullable": true,
+                                    "dict_id": 0,
+                                    "dict_is_ordered": false,
+                                    "metadata": {}
+                                  }
+                                ]
+                              },
+                              "nullable": true,
+                              "dict_id": 0,
+                              "dict_is_ordered": false,
+                              "metadata": {}
+                            }
+                          },
+                          "nullable": true,
+                          "dict_id": 0,
+                          "dict_is_ordered": false,
+                          "metadata": {}
+                        }
+                      ]
+                    },
+                    "nullable": true,
+                    "dict_id": 0,
+                    "dict_is_ordered": false,
+                    "metadata": {}
+                  }
+                },
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              },
+              {
+                "name": "IsConstructor",
+                "data_type": "Boolean",
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              },
+              {
+                "name": "LocalVariables",
+                "data_type": {
+                  "List": {
+                    "name": "item",
+                    "data_type": {
+                      "Struct": [
+                        {
+                          "name": "TypeType",
+                          "data_type": "Utf8",
+                          "nullable": true,
+                          "dict_id": 0,
+                          "dict_is_ordered": false,
+                          "metadata": {}
+                        },
+                        {
+                          "name": "TypeValue",
+                          "data_type": "Utf8",
+                          "nullable": true,
+                          "dict_id": 0,
+                          "dict_is_ordered": false,
+                          "metadata": {}
+                        }
+                      ]
+                    },
+                    "nullable": true,
+                    "dict_id": 0,
+                    "dict_is_ordered": false,
+                    "metadata": {}
+                  }
+                },
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              },
+              {
+                "name": "Name",
+                "data_type": "Utf8",
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              },
+              {
+                "name": "Package",
+                "data_type": "Utf8",
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              },
+              {
+                "name": "Parameters",
+                "data_type": {
+                  "List": {
+                    "name": "item",
+                    "data_type": {
+                      "Struct": [
+                        {
+                          "name": "TypeType",
+                          "data_type": "Utf8",
+                          "nullable": true,
+                          "dict_id": 0,
+                          "dict_is_ordered": false,
+                          "metadata": {}
+                        },
+                        {
+                          "name": "TypeValue",
+                          "data_type": "Utf8",
+                          "nullable": true,
+                          "dict_id": 0,
+                          "dict_is_ordered": false,
+                          "metadata": {}
+                        }
+                      ]
+                    },
+                    "nullable": true,
+                    "dict_id": 0,
+                    "dict_is_ordered": false,
+                    "metadata": {}
+                  }
+                },
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              },
+              {
+                "name": "Position",
+                "data_type": {
+                  "Struct": [
+                    {
+                      "name": "StartLine",
+                      "data_type": "Int64",
+                      "nullable": true,
+                      "dict_id": 0,
+                      "dict_is_ordered": false,
+                      "metadata": {}
+                    },
+                    {
+                      "name": "StartLinePosition",
+                      "data_type": "Int64",
+                      "nullable": true,
+                      "dict_id": 0,
+                      "dict_is_ordered": false,
+                      "metadata": {}
+                    },
+                    {
+                      "name": "StopLine",
+                      "data_type": "Int64",
+                      "nullable": true,
+                      "dict_id": 0,
+                      "dict_is_ordered": false,
+                      "metadata": {}
+                    },
+                    {
+                      "name": "StopLinePosition",
+                      "data_type": "Int64",
+                      "nullable": true,
+                      "dict_id": 0,
+                      "dict_is_ordered": false,
+                      "metadata": {}
+                    }
+                  ]
+                },
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              },
+              {
+                "name": "ReturnType",
+                "data_type": "Utf8",
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              }
+            ]
+          },
+          "nullable": true,
+          "dict_id": 0,
+          "dict_is_ordered": false,
+          "metadata": {}
+        }
+      },
+      "nullable": true,
+      "dict_id": 0,
+      "dict_is_ordered": false,
+      "metadata": {}
+    },
+    {
+      "name": "Implements",
+      "data_type": {
+        "List": {
+          "name": "item",
+          "data_type": "Utf8",
+          "nullable": true,
+          "dict_id": 0,
+          "dict_is_ordered": false,
+          "metadata": {}
+        }
+      },
+      "nullable": true,
+      "dict_id": 0,
+      "dict_is_ordered": false,
+      "metadata": {}
+    },
+    {
+      "name": "Imports",
+      "data_type": {
+        "List": {
+          "name": "item",
+          "data_type": {
+            "Struct": [
+              {
+                "name": "AsName",
+                "data_type": "Utf8",
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              },
+              {
+                "name": "Source",
+                "data_type": "Utf8",
+                "nullable": true,
+                "dict_id": 0,
+                "dict_is_ordered": false,
+                "metadata": {}
+              }
+            ]
+          },
+          "nullable": true,
+          "dict_id": 0,
+          "dict_is_ordered": false,
+          "metadata": {}
+        }
+      },
+      "nullable": true,
+      "dict_id": 0,
+      "dict_is_ordered": false,
+      "metadata": {}
+    },
+    {
+      "name": "Module",
+      "data_type": "Utf8",
+      "nullable": true,
+      "dict_id": 0,
+      "dict_is_ordered": false,
+      "metadata": {}
+    },
+    {
+      "name": "NodeName",
+      "data_type": "Utf8",
+      "nullable": true,
+      "dict_id": 0,
+      "dict_is_ordered": false,
+      "metadata": {}
+    },
+    {
+      "name": "Package",
+      "data_type": "Utf8",
+      "nullable": true,
+      "dict_id": 0,
+      "dict_is_ordered": false,
+      "metadata": {}
+    },
+    {
+      "name": "Position",
+      "data_type": {
+        "Struct": [
+          {
+            "name": "StartLine",
+            "data_type": "Int64",
+            "nullable": true,
+            "dict_id": 0,
+            "dict_is_ordered": false,
+            "metadata": {}
+          },
+          {
+            "name": "StopLine",
+            "data_type": "Int64",
+            "nullable": true,
+            "dict_id": 0,
+            "dict_is_ordered": false,
+            "metadata": {}
+          }
+        ]
+      },
+      "nullable": true,
+      "dict_id": 0,
+      "dict_is_ordered": false,
+      "metadata": {}
+    },
+    {
+      "name": "Type",
+      "data_type": "Utf8",
+      "nullable": true,
+      "dict_id": 0,
+      "dict_is_ordered": false,
+      "metadata": {}
+    }
+  ],
+  "metadata": {}
+}
