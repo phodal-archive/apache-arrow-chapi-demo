@@ -6,7 +6,9 @@
 
 Jetbrains Dataframe Arrow depends on Apache Arrow, so it is not surprising that the size is the same as Jetbrains Dataframe.
 
-## Use dataframe-arrow
+## Apache Arrow Schema 
+
+Demo with FlatBuffer: `flatc --java demo.fbs `
 
 ## Schema inference
 
@@ -69,3 +71,13 @@ nested type in dataframe is not supported yet: https://github.com/Kotlin/datafra
 - arrowTypesMatching.kt
 - ArrowWriterImpl.kt
 
+### Data samples
+
+```kotlin
+val schema = Schema(List<Field>().k().apply {
+    add(Field.nullable("Source", ArrowType.Utf8()))
+    add(Field.nullable("AsName", ArrowType.Utf8()))
+    add(Field.nullable("UsageName", ArrowType.List(ArrowType.Utf8())))
+    add(Field.nullable("Scope", ArrowType.Utf8()))
+}, null)
+```
