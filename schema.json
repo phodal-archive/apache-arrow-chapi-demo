@@ -69,23 +69,6 @@
           "type": {
             "name": "list"
           },
-          "children": [
-            {
-              "name": null,
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            }
-          ]
-        },
-        {
-          "name": "TypeValue",
-          "nullable": true,
-          "type": {
-            "name": "utf8"
-          },
           "children": []
         }
       ]
@@ -96,16 +79,7 @@
       "type": {
         "name": "list"
       },
-      "children": [
-        {
-          "name": null,
-          "nullable": false,
-          "type": {
-            "name": "utf8"
-          },
-          "children": []
-        }
-      ]
+      "children": []
     },
     {
       "name": "Functions",
@@ -188,7 +162,7 @@
           "children": [
             {
               "name": "Package",
-              "nullable": true,
+              "nullable": false,
               "type": {
                 "name": "utf8"
               },
@@ -265,24 +239,7 @@
               "type": {
                 "name": "list"
               },
-              "children": [
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                }
-              ]
+              "children": []
             },
             {
               "name": "Package",
@@ -294,7 +251,7 @@
             },
             {
               "name": "NodeName",
-              "nullable": true,
+              "nullable": false,
               "type": {
                 "name": "utf8"
               },
@@ -364,150 +321,6 @@
                 "name": "list"
               },
               "children": [
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
                 {
                   "name": "TypeValue",
                   "nullable": false,
