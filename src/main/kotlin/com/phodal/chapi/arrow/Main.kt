@@ -35,6 +35,9 @@ private fun parserPythonOutput() {
                         val vectorSchemaRootRecover = reader.vectorSchemaRoot
                         print(vectorSchemaRootRecover.contentToTSVString())
                     }
+
+                    val schema = reader.vectorSchemaRoot.schema.toJson()
+                    File("schema.json").writeText(schema)
                 }
             }
         }

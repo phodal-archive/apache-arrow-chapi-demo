@@ -2,7 +2,7 @@
   "fields": [
     {
       "name": "NodeName",
-      "nullable": false,
+      "nullable": true,
       "type": {
         "name": "utf8"
       },
@@ -10,7 +10,7 @@
     },
     {
       "name": "Module",
-      "nullable": false,
+      "nullable": true,
       "type": {
         "name": "utf8"
       },
@@ -18,7 +18,7 @@
     },
     {
       "name": "Type",
-      "nullable": false,
+      "nullable": true,
       "type": {
         "name": "utf8"
       },
@@ -26,7 +26,7 @@
     },
     {
       "name": "Package",
-      "nullable": false,
+      "nullable": true,
       "type": {
         "name": "utf8"
       },
@@ -34,7 +34,7 @@
     },
     {
       "name": "FilePath",
-      "nullable": false,
+      "nullable": true,
       "type": {
         "name": "utf8"
       },
@@ -48,35 +48,44 @@
       },
       "children": [
         {
-          "name": "TypeType",
-          "nullable": false,
-          "type": {
-            "name": "utf8"
-          },
-          "children": []
-        },
-        {
-          "name": "TypeKey",
-          "nullable": false,
-          "type": {
-            "name": "utf8"
-          },
-          "children": []
-        },
-        {
-          "name": "Modifiers",
+          "name": "item",
           "nullable": true,
           "type": {
-            "name": "list"
+            "name": "struct"
           },
           "children": [
             {
-              "name": "element",
+              "name": "TypeType",
               "nullable": true,
               "type": {
                 "name": "utf8"
               },
               "children": []
+            },
+            {
+              "name": "TypeKey",
+              "nullable": true,
+              "type": {
+                "name": "utf8"
+              },
+              "children": []
+            },
+            {
+              "name": "Modifiers",
+              "nullable": true,
+              "type": {
+                "name": "list"
+              },
+              "children": [
+                {
+                  "name": "item",
+                  "nullable": true,
+                  "type": {
+                    "name": "utf8"
+                  },
+                  "children": []
+                }
+              ]
             }
           ]
         }
@@ -90,7 +99,7 @@
       },
       "children": [
         {
-          "name": "element",
+          "name": "item",
           "nullable": true,
           "type": {
             "name": "utf8"
@@ -107,355 +116,287 @@
       },
       "children": [
         {
-          "name": "Name",
-          "nullable": false,
-          "type": {
-            "name": "utf8"
-          },
-          "children": []
-        },
-        {
-          "name": "Package",
-          "nullable": false,
-          "type": {
-            "name": "utf8"
-          },
-          "children": []
-        },
-        {
-          "name": "ReturnType",
-          "nullable": false,
-          "type": {
-            "name": "utf8"
-          },
-          "children": []
-        },
-        {
-          "name": "Parameters",
-          "nullable": true,
-          "type": {
-            "name": "list"
-          },
-          "children": [
-            {
-              "name": "TypeValue",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "TypeType",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "TypeValue",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "TypeType",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            }
-          ]
-        },
-        {
-          "name": "FunctionCalls",
-          "nullable": true,
-          "type": {
-            "name": "list"
-          },
-          "children": [
-            {
-              "name": "Package",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "NodeName",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "FunctionName",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "Position",
-              "nullable": true,
-              "type": {
-                "name": "struct"
-              },
-              "children": [
-                {
-                  "name": "StartLine",
-                  "nullable": false,
-                  "type": {
-                    "name": "int",
-                    "bitWidth": 32,
-                    "isSigned": true
-                  },
-                  "children": []
-                },
-                {
-                  "name": "StartLinePosition",
-                  "nullable": false,
-                  "type": {
-                    "name": "int",
-                    "bitWidth": 32,
-                    "isSigned": true
-                  },
-                  "children": []
-                },
-                {
-                  "name": "StopLine",
-                  "nullable": false,
-                  "type": {
-                    "name": "int",
-                    "bitWidth": 32,
-                    "isSigned": true
-                  },
-                  "children": []
-                },
-                {
-                  "name": "StopLinePosition",
-                  "nullable": false,
-                  "type": {
-                    "name": "int",
-                    "bitWidth": 32,
-                    "isSigned": true
-                  },
-                  "children": []
-                }
-              ]
-            },
-            {
-              "name": "Parameters",
-              "nullable": true,
-              "type": {
-                "name": "list"
-              },
-              "children": []
-            },
-            {
-              "name": "Package",
-              "nullable": true,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "NodeName",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "FunctionName",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "Position",
-              "nullable": true,
-              "type": {
-                "name": "struct"
-              },
-              "children": [
-                {
-                  "name": "StartLine",
-                  "nullable": false,
-                  "type": {
-                    "name": "int",
-                    "bitWidth": 32,
-                    "isSigned": true
-                  },
-                  "children": []
-                },
-                {
-                  "name": "StartLinePosition",
-                  "nullable": false,
-                  "type": {
-                    "name": "int",
-                    "bitWidth": 32,
-                    "isSigned": true
-                  },
-                  "children": []
-                },
-                {
-                  "name": "StopLine",
-                  "nullable": false,
-                  "type": {
-                    "name": "int",
-                    "bitWidth": 32,
-                    "isSigned": true
-                  },
-                  "children": []
-                },
-                {
-                  "name": "StopLinePosition",
-                  "nullable": false,
-                  "type": {
-                    "name": "int",
-                    "bitWidth": 32,
-                    "isSigned": true
-                  },
-                  "children": []
-                }
-              ]
-            },
-            {
-              "name": "Parameters",
-              "nullable": true,
-              "type": {
-                "name": "list"
-              },
-              "children": [
-                {
-                  "name": "TypeValue",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                },
-                {
-                  "name": "TypeType",
-                  "nullable": false,
-                  "type": {
-                    "name": "utf8"
-                  },
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Position",
+          "name": "item",
           "nullable": true,
           "type": {
             "name": "struct"
           },
           "children": [
             {
-              "name": "StartLine",
-              "nullable": false,
+              "name": "Name",
+              "nullable": true,
               "type": {
-                "name": "int",
-                "bitWidth": 32,
-                "isSigned": true
+                "name": "utf8"
               },
               "children": []
             },
             {
-              "name": "StartLinePosition",
-              "nullable": false,
+              "name": "Package",
+              "nullable": true,
               "type": {
-                "name": "int",
-                "bitWidth": 32,
-                "isSigned": true
+                "name": "utf8"
               },
               "children": []
             },
             {
-              "name": "StopLine",
-              "nullable": false,
+              "name": "ReturnType",
+              "nullable": true,
               "type": {
-                "name": "int",
-                "bitWidth": 32,
-                "isSigned": true
+                "name": "utf8"
               },
               "children": []
             },
             {
-              "name": "StopLinePosition",
-              "nullable": false,
+              "name": "Parameters",
+              "nullable": true,
               "type": {
-                "name": "int",
-                "bitWidth": 32,
-                "isSigned": true
+                "name": "list"
+              },
+              "children": [
+                {
+                  "name": "item",
+                  "nullable": true,
+                  "type": {
+                    "name": "struct"
+                  },
+                  "children": [
+                    {
+                      "name": "TypeValue",
+                      "nullable": true,
+                      "type": {
+                        "name": "utf8"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "TypeType",
+                      "nullable": true,
+                      "type": {
+                        "name": "utf8"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "FunctionCalls",
+              "nullable": true,
+              "type": {
+                "name": "list"
+              },
+              "children": [
+                {
+                  "name": "item",
+                  "nullable": true,
+                  "type": {
+                    "name": "struct"
+                  },
+                  "children": [
+                    {
+                      "name": "Package",
+                      "nullable": true,
+                      "type": {
+                        "name": "utf8"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "NodeName",
+                      "nullable": true,
+                      "type": {
+                        "name": "utf8"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "FunctionName",
+                      "nullable": true,
+                      "type": {
+                        "name": "utf8"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Position",
+                      "nullable": true,
+                      "type": {
+                        "name": "struct"
+                      },
+                      "children": [
+                        {
+                          "name": "StartLine",
+                          "nullable": true,
+                          "type": {
+                            "name": "int",
+                            "bitWidth": 64,
+                            "isSigned": true
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "StartLinePosition",
+                          "nullable": true,
+                          "type": {
+                            "name": "int",
+                            "bitWidth": 64,
+                            "isSigned": true
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "StopLine",
+                          "nullable": true,
+                          "type": {
+                            "name": "int",
+                            "bitWidth": 64,
+                            "isSigned": true
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "StopLinePosition",
+                          "nullable": true,
+                          "type": {
+                            "name": "int",
+                            "bitWidth": 64,
+                            "isSigned": true
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Parameters",
+                      "nullable": true,
+                      "type": {
+                        "name": "list"
+                      },
+                      "children": [
+                        {
+                          "name": "item",
+                          "nullable": true,
+                          "type": {
+                            "name": "struct"
+                          },
+                          "children": [
+                            {
+                              "name": "TypeValue",
+                              "nullable": true,
+                              "type": {
+                                "name": "utf8"
+                              },
+                              "children": []
+                            },
+                            {
+                              "name": "TypeType",
+                              "nullable": true,
+                              "type": {
+                                "name": "utf8"
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Position",
+              "nullable": true,
+              "type": {
+                "name": "struct"
+              },
+              "children": [
+                {
+                  "name": "StartLine",
+                  "nullable": true,
+                  "type": {
+                    "name": "int",
+                    "bitWidth": 64,
+                    "isSigned": true
+                  },
+                  "children": []
+                },
+                {
+                  "name": "StartLinePosition",
+                  "nullable": true,
+                  "type": {
+                    "name": "int",
+                    "bitWidth": 64,
+                    "isSigned": true
+                  },
+                  "children": []
+                },
+                {
+                  "name": "StopLine",
+                  "nullable": true,
+                  "type": {
+                    "name": "int",
+                    "bitWidth": 64,
+                    "isSigned": true
+                  },
+                  "children": []
+                },
+                {
+                  "name": "StopLinePosition",
+                  "nullable": true,
+                  "type": {
+                    "name": "int",
+                    "bitWidth": 64,
+                    "isSigned": true
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "LocalVariables",
+              "nullable": true,
+              "type": {
+                "name": "list"
+              },
+              "children": [
+                {
+                  "name": "item",
+                  "nullable": true,
+                  "type": {
+                    "name": "struct"
+                  },
+                  "children": [
+                    {
+                      "name": "TypeValue",
+                      "nullable": true,
+                      "type": {
+                        "name": "utf8"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "TypeType",
+                      "nullable": true,
+                      "type": {
+                        "name": "utf8"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "IsConstructor",
+              "nullable": true,
+              "type": {
+                "name": "bool"
               },
               "children": []
             }
           ]
-        },
-        {
-          "name": "LocalVariables",
-          "nullable": true,
-          "type": {
-            "name": "list"
-          },
-          "children": [
-            {
-              "name": "TypeValue",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "TypeType",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "TypeValue",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            },
-            {
-              "name": "TypeType",
-              "nullable": false,
-              "type": {
-                "name": "utf8"
-              },
-              "children": []
-            }
-          ]
-        },
-        {
-          "name": "IsConstructor",
-          "nullable": true,
-          "type": {
-            "name": "bool"
-          },
-          "children": []
         }
       ]
     },
@@ -467,20 +408,29 @@
       },
       "children": [
         {
-          "name": "Source",
-          "nullable": false,
+          "name": "item",
+          "nullable": true,
           "type": {
-            "name": "utf8"
+            "name": "struct"
           },
-          "children": []
-        },
-        {
-          "name": "AsName",
-          "nullable": false,
-          "type": {
-            "name": "utf8"
-          },
-          "children": []
+          "children": [
+            {
+              "name": "Source",
+              "nullable": true,
+              "type": {
+                "name": "utf8"
+              },
+              "children": []
+            },
+            {
+              "name": "AsName",
+              "nullable": true,
+              "type": {
+                "name": "utf8"
+              },
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -493,20 +443,20 @@
       "children": [
         {
           "name": "StartLine",
-          "nullable": false,
+          "nullable": true,
           "type": {
             "name": "int",
-            "bitWidth": 32,
+            "bitWidth": 64,
             "isSigned": true
           },
           "children": []
         },
         {
           "name": "StopLine",
-          "nullable": false,
+          "nullable": true,
           "type": {
             "name": "int",
-            "bitWidth": 32,
+            "bitWidth": 64,
             "isSigned": true
           },
           "children": []
