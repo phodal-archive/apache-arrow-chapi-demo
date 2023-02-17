@@ -183,9 +183,26 @@ Kotlin Dataframe 依赖于 Arrow 的核心库和格式库，这些库提供了 A
 
 ## Kotlin Dataframe 问题
 
-nested type in dataframe is not supported yet: https://github.com/Kotlin/dataframe/issues/271, we need to modify implementation of following classes:
+Kotlin Dataframe 是一个非常优秀的 Kotlin 数据框架，但是它也存在一些 问题：
+
+- 不支持嵌套类型的数据，例如嵌套的列表或嵌套的数据类。详细见：[Nested type in dataframe is not supported yet](https://github.com/Kotlin/dataframe/issues/271)
+- 对于数据的变更需要使用到 Arrow 库中的 Mutable 表示类型，不方便使用。
+- 在数据量较小的情况下，使用 Kotlin Dataframe 的性能不如 Kotlin 内置的集合类型。
+
+如果想要解决这些问题，可以考虑修改 Kotlin Dataframe Arrow 的源码
 
 - arrowTypesMatching.kt
 - ArrowWriterImpl.kt
 
-工作量比较大，需要修改 dataframe 的源码，所以暂时不考虑这个方案。
+
+此外，如果你不想修改 Kotlin Dataframe 源码，也可以考虑使用其他类库，例如：
+
+(ChatGPT 生成)
+
+-  Ktorm：提供了强类型的 SQL 操作，与 Kotlin 集成良好。
+- Exposed：提供了类似于 ActiveRecord 的模型操作方式，支持 DSL 查询语法。
+- JOOQ：支持多种数据库类型，提供了完善的查询语法和类型安全。
+
+以上是一些常用的 Kotlin 数据库操作类库，你可以根据自己的需求选择适合的工具
+
+
