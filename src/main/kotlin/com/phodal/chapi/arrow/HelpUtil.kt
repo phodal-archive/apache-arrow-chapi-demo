@@ -1,6 +1,5 @@
 package com.phodal.chapi.arrow
 
-import org.apache.arrow.flatbuf.Union
 import org.apache.arrow.vector.types.DateUnit
 import org.apache.arrow.vector.types.FloatingPointPrecision
 import org.apache.arrow.vector.types.TimeUnit
@@ -19,6 +18,7 @@ import java.time.LocalDateTime
 import java.time.LocalTime
 import kotlin.reflect.full.isSubtypeOf
 import kotlin.reflect.typeOf
+
 
 class HelpUtil {
     fun toArrowField(

@@ -85,3 +85,33 @@
 }
 ```
 
+
+
+```
+{
+  "name": "Modifiers",
+  "type": {
+    "name": "Modifiers",
+    "type": "list",
+    "value_type": "string"
+  }
+}
+```
+
+这个 JSON 对象可以转换为以下的 Apache Arrow 的 FieldType：
+
+```kotlin
+import org.apache.arrow.vector.types.pojo.ArrowType
+import org.apache.arrow.vector.types.pojo.Field
+import org.apache.arrow.vector.types.pojo.ListType
+
+val modifiersField = Field(
+        "Modifiers",
+        ListType(true, ArrowType.Utf8()),
+        null
+        )
+```
+
+其中，"name" 字段的类型是 Utf8，"type" 字段的类型是 List，"value_type" 字段的类型是 Utf8。因为 "type" 字段是一个列表类型，
+所以需要使用 ArrowType.List() 来表示。最后，将三个字段的信息组成一个 Struct 类型，就得到了整个 Modifiers 类型的 ArrowType。
+
