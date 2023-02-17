@@ -16,6 +16,8 @@ import org.apache.arrow.vector.types.pojo.Schema
 import org.jetbrains.kotlinx.dataframe.DataFrame
 import org.jetbrains.kotlinx.dataframe.annotations.DataSchema
 import org.jetbrains.kotlinx.dataframe.api.cast
+import org.jetbrains.kotlinx.dataframe.api.filter
+import org.jetbrains.kotlinx.dataframe.api.group
 import org.jetbrains.kotlinx.dataframe.api.print
 import org.jetbrains.kotlinx.dataframe.api.schema
 import org.jetbrains.kotlinx.dataframe.api.toDataFrame
@@ -63,8 +65,16 @@ fun main(args: Array<String>) {
 
     val dataframe = ds.toDataFrame()
 
-    val schema = Schema.fromJSON(File("schema.json").readText())
+    dataframe
+        .filter { it[CodeDataStruct::Functions].isNotEmpty() }
+        .filter { it[CodeDataStruct::Functions].any { function -> function.Name == "main" } }
+        .print()
+}
 
+private fun writeToFile(
+    dataframe: DataFrame<CodeDataStruct>,
+    schema: Schema
+) {
     val root = dataframe.arrowWriter(schema).allocateVectorSchemaRoot()
 
     val file = File("randon_access_to_file.arrow")
