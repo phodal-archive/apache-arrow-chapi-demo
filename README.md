@@ -62,3 +62,10 @@ implementation(libs.kotlin.datetimeJvm)
 1. the class should be `data class`,
 2. the collections should be `List` or `Map` or `ArrayList`, can not be `Array`
 
+## Nested type in dataframe
+
+nested type in dataframe is not supported yet: https://github.com/Kotlin/dataframe/issues/271
+
+- arrowTypesMatching.kt
+- ArrowWriterImpl.kt
+
