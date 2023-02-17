@@ -1,6 +1,5 @@
 package com.phodal.chapi.arrow
 
-import org.apache.arrow.vector.TypeLayout
 import org.apache.arrow.vector.types.DateUnit
 import org.apache.arrow.vector.types.FloatingPointPrecision
 import org.apache.arrow.vector.types.TimeUnit
@@ -105,8 +104,8 @@ class HelpUtil {
             //  Field(name: "element", nullable: true, datatype: Int32),
             //)
 
-//                val field = Field(null, FieldType(nullable, ArrowType.Utf8(), null), emptyList())
-                Field(column.name(), FieldType(true, ArrowType.List(), null), emptyList())
+                val child = listOf(Field("element", FieldType(true, ArrowType.Utf8(), null), emptyList()))
+                Field(column.name(), FieldType(true, ArrowType.List(), null), child)
             }
 
             columnType.isSubtypeOf(typeOf<DataFrame<*>>()) -> {
@@ -133,16 +132,16 @@ class HelpUtil {
                 //  Field(name: "d1", nullable: false, datatype: Int32)
                 //  Field(name: "d2", nullable: true, datatype: Int32)
                 //])
-                val fields: List<Field> = (column as FrameColumn<*>).values().flatMap {
+                val child: List<Field> = (column as FrameColumn<*>).values().flatMap {
                     it.columns().map { col -> toArrowField(col, mismatchSubscriber) }
                 }
 
-                Field(column.name(), FieldType(true, ArrowType.List(), null), fields)
+                Field(column.name(), FieldType(true, ArrowType.List(), null), child)
             }
 
             columnType.isSubtypeOf(typeOf<DataRow<*>>()) -> {
-                val fields = (column as ColumnGroup<*>).columns().map { col -> toArrowField(col, mismatchSubscriber) }
-                Field(column.name(), FieldType(true, ArrowType.Struct(), null), fields)
+                val child = (column as ColumnGroup<*>).columns().map { col -> toArrowField(col, mismatchSubscriber) }
+                Field(column.name(), FieldType(true, ArrowType.Struct(), null), child)
             }
 
             else -> {

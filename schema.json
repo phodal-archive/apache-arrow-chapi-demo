@@ -69,7 +69,16 @@
           "type": {
             "name": "list"
           },
-          "children": []
+          "children": [
+            {
+              "name": "element",
+              "nullable": true,
+              "type": {
+                "name": "utf8"
+              },
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -79,7 +88,16 @@
       "type": {
         "name": "list"
       },
-      "children": []
+      "children": [
+        {
+          "name": "element",
+          "nullable": true,
+          "type": {
+            "name": "utf8"
+          },
+          "children": []
+        }
+      ]
     },
     {
       "name": "Functions",
